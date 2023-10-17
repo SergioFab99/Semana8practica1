@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 269699781}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.67, y: -0.4, z: 0}
+  m_LocalPosition: {x: -0.52, y: -2.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -708,6 +708,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!1 &1760191985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1760191986}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1760191986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760191985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1840236521}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1840236516
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,7 +823,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1840236519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,7 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018d22974a8d0474bb6722b5d91d425e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 5
 --- !u!212 &1840236520
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -867,10 +898,11 @@ Transform:
   m_GameObject: {fileID: 1840236516}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.24, y: 0, z: 0}
+  m_LocalPosition: {x: -5.72, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1760191986}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1840236522
@@ -885,9 +917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e8eaf78834bc545b9bf2c89da71c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletType1: {fileID: 0}
-  bulletType2: {fileID: 0}
-  firePoint: {fileID: 0}
+  bulletType1Prefab: {fileID: 104451069506550232, guid: c72398c4c61ca084e9975d38f8b3ff89, type: 3}
+  bulletType2Prefab: {fileID: 8027484112141740881, guid: e159cbaad01c7994d8455e82435c9bed, type: 3}
 --- !u!1 &1898209909
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +1000,7 @@ Transform:
   m_GameObject: {fileID: 1898209909}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.15, y: -3.22, z: 0}
+  m_LocalPosition: {x: 5.04, y: -2.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1051,8 +1082,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6e3c454db9b5f4d890a7ac6c92dc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleRadius: 5
-  moveSpeed: 5
+  circleRadius: 1
+  moveSpeed: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

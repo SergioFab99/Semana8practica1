@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BulletType2 : MonoBehaviour
 {
-    public float bulletSpeed = 10.0f; // Velocidad de la bala
+    public float bulletSpeed = 10.0f; // Velocidad de la bala pequeña
+    public int damage = 5; // Daño causado por la bala pequeña
 
     void Start()
     {
