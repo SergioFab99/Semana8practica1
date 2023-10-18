@@ -21,4 +21,3 @@ public class BulletType1 : MonoBehaviour
         // Aquí puedes agregar lógica adicional para la bala, si es necesario
     }
 }
-

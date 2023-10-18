@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Enemigo1 : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     private float moveSpeed = 2.0f;
-    [SerializeField] 
+    [SerializeField]
     private float leftBound = -5.0f;
-    [SerializeField] 
+    [SerializeField]
     private float rightBound = 5.0f;
+    [SerializeField]
+    private int life = 5;
 
     private int direction = 1; // 1 para moverse a la derecha, -1 para moverse a la izquierda
 
@@ -35,4 +37,3 @@ public class Enemigo1 : MonoBehaviour
         }
     }
 }
-

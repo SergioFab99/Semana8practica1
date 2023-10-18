@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Enemigo4 : MonoBehaviour
 {
-    [SerializeField] private float circleRadius = 2.0f;
-    [SerializeField] private float moveSpeed = 1.0f;
-
+    [SerializeField]
+     private float circleRadius = 2.0f;
+    [SerializeField]
+    private float moveSpeed = 1.0f;
+    [SerializeField]
+    private int life = 5;
     private float angle = 0.0f;
 
     private void Update()

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Enemigo3 : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5.0f;
+    [SerializeField] private float moveSpeed = 2.0f;
+    [SerializeField] private GameObject bulletPrefab; // Prefab de la bala
+    [SerializeField] private Transform firePoint1; // Primer punto de origen de los disparos (izquierda)
+    [SerializeField] private Transform firePoint2; // Segundo punto de origen de los disparos (derecha)
 
     private Vector3 currentDirection;
     private bool isMoving = false;
@@ -33,7 +36,7 @@ public class Enemigo3 : MonoBehaviour
         while (true)
         {
             // Espera 5 segundos
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(5.0f);
 
             // Elige una nueva dirección aleatoria
             currentDirection = Random.insideUnitCircle.normalized;
@@ -52,6 +55,26 @@ public class Enemigo3 : MonoBehaviour
 
             // Detiene el movimiento
             isMoving = false;
+        }
+    }
+
+    private void ShootTwoBullets()
+    {
+        if (bulletPrefab != null && firePoint1 != null && firePoint2 != null)
+        {
+            // Crear una instancia de la bala en el primer punto de origen (izquierda)
+            GameObject bullet1 = Instantiate(bulletPrefab, firePoint1.position, firePoint1.rotation);
+
+            // Configurar la velocidad de la primera bala hacia la izquierda
+            Rigidbody2D rb1 = bullet1.GetComponent<Rigidbody2D>();
+            rb1.velocity = -transform.right * 5.0f; // Velocidad hacia la izquierda
+
+            // Crear una instancia de la bala en el segundo punto de origen (derecha)
+            GameObject bullet2 = Instantiate(bulletPrefab, firePoint2.position, firePoint2.rotation);
+
+            // Configurar la velocidad de la segunda bala hacia la derecha
+            Rigidbody2D rb2 = bullet2.GetComponent<Rigidbody2D>();
+            rb2.velocity = transform.right * 5.0f; // Velocidad hacia la derecha
         }
     }
 }
